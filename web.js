@@ -25,11 +25,15 @@ http.ServerResponse.prototype.serveChat = function (request) {
 		msg += data;
 	});
 	request.on('end', function() {
-		msgs.push(msg);
-		while (msgs.length > 10)
-			msgs.shift();
+		if (msg.length) {
+			msg = JSON.parse(msg);
+			msg.loggedAt = (new Date()).toJSON();
+			msgs.push(msg);
+			while (msgs.length > 10)
+				msgs.shift();
+		}
 		response.writeHead(200, {'Content-Type': 'text/plain'});
-		response.write('{' + msgs.join() + '}');
+		response.write(JSON.stringify(msgs));
 		response.end();
 	});
 }
@@ -46,7 +50,6 @@ http.ServerResponse.prototype.serve = function (path) {
 	else {
 		path = '.' + path;
 		var ext = path.slice(path.lastIndexOf('.') + 1);
-		console.log(ext,type[ext],type);
 		this.writeHead(200, {'Content-Type': type[ext]});
 		this.write(fs.read(path).supplant(tokens));
 	}
