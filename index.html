@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	<title>Now showing: {{NOWSHOWING}}</title>
+	<meta name="author" content="Zach Pomerantz" />
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="/style/index.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script type="text/javascript" src="/script/script.js"></script>
+</head>
+
+<body>
+
+	<div class="menuBar">
+		<ul>
+			<li>Past movies
+				<ul>
+					<li onclick="showSchedule()">See full schedule</li>
+					<li id="calendar" />
+				</ul>
+			</li>
+			<li>Coming soon
+				<ul>
+					<li id="nextFilm" onclick="showNextFilm()" />
+					<li onclick="showRequest()">Suggest a film</li>
+				</ul>
+			</li>
+			<li onclick="showAbout()">About</li>
+		</ul>
+	</div>
+
+	<div class="header">
+		<div class="title"></div>
+		<div class="broadcast"></div>
+	</div>
+
+	<div class="blog">
+		<div class="blog options">
+			<ul>
+				<li>Submit a post</li>
+			</ul>
+		</div>
+		<ul class="posts" />
+	</div>
+
+	<div class="chat">
+		<ul class="messages" />
+		<ul class="chat options">
+			<li><input type="text" /></li>
+			<li><button onclick="Chat.send()" /></li>
+		</ul>
+	</div>
+
+</body>
+
+</html>
