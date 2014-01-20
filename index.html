@@ -4,9 +4,10 @@
 <head>
 	<title>Now showing: {{NOWSHOWING}}</title>
 	<meta name="author" content="Zach Pomerantz" />
-	//<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-	//<link rel="stylesheet" type="text/css" href="/style/index.css" />
-	//<script type="text/javascript" src="/script/index.js" />
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="/style/index.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script type="text/javascript" src="/script/script.js"></script>
 </head>
 
 <body>
@@ -22,7 +23,7 @@
 			<li>Coming soon
 				<ul>
 					<li id="nextFilm" onclick="showNextFilm()" />
-					<li onclick=showRequest()>Suggest a film</li>
+					<li onclick="showRequest()">Suggest a film</li>
 				</ul>
 			</li>
 			<li onclick="showAbout()">About</li>
@@ -30,8 +31,8 @@
 	</div>
 
 	<div class="header">
-		<div class="title" />
-		<div class="broadcast" />
+		<div class="title"></div>
+		<div class="broadcast"></div>
 	</div>
 
 	<div class="blog">
@@ -47,7 +48,7 @@
 		<ul class="messages" />
 		<ul class="chat options">
 			<li><input type="text" /></li>
-			<li><button /></li>
+			<li><button onclick="Chat.send()" /></li>
 		</ul>
 	</div>
 
