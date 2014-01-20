@@ -1,0 +1,25 @@
+{
+  "name": "movie-club",
+  "version": "0.0.0",
+  "description": "Blog for Movie Club",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zzmp/movie-club"
+  },
+  "keywords": [
+    "movie",
+    "club",
+    "blog",
+    "chat"
+  ],
+  "author": "zzmp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zzmp/movie-club/issues"
+  },
+  "homepage": "https://github.com/zzmp/movie-club"
+}
