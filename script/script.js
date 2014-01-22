@@ -30,7 +30,7 @@ Chat = {
 				Chat.display(str);
 			});
 		}
-		Chat.send();
+		Chat.fetch();
 		setInterval(function () {Chat.fetch()}, 10000);
 	},
 	'fetch': function () {
@@ -57,7 +57,9 @@ Chat = {
 			if (Chat.lastLogged < msgs[msg].loggedAt) {
 				Chat.msgs.push(msgs[msg]);
 				$('ul.messages').append(
-					'<li>' + msgs[msg].username + ': ' + msgs[msg].text + '</li>'
+					$('<li>').append(
+						msgs[msg].username + ': ' + msgs[msg].text
+					)
 				);
 			}
 		}
